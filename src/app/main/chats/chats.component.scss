@@ -1,0 +1,108 @@
+.container {
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  height: 90vh;
+  -webkit-box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.79);
+  box-shadow: 0px 0px 15px 1px rgba(0, 0, 0, 0.79);
+
+  .container-users {
+    border-right: 2px solid #ccc;
+
+    .header {
+      height: 100px;
+      background-color: #f1f1f1d6;
+      border-bottom: 1px solid #ccc;
+
+      .profile {
+        height: 50px;
+        display: flex;
+
+        .avatar {
+          img {
+            height: 40px;
+            padding: 5px;
+            border-radius: 50%;
+          }
+        }
+
+        .nickname {
+          display: flex;
+          align-items: center;
+          margin: 8px;
+          font-weight: 500;
+          font-size: 18px
+        }
+      }
+
+      .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+
+        .search {
+          background-color: #fff;
+          border: 1px solid #ccc;
+          padding: 6px;
+          border-radius: 30px;
+          display: flex;
+          width: 85%;
+
+          input {
+            border: none;
+            padding: 0 6px;
+          }
+
+          input:focus,
+          input:hover {
+            outline: none;
+          }
+        }
+      }
+    }
+
+    .list-users {
+      height: calc(90vh - 101px);
+      background-color: #ffffff;
+      overflow-y: scroll;
+
+      h3 {
+        color: #0dd7ff;
+        font-size: 24px;
+        font-weight: 200;
+        text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.69);
+        cursor: pointer;
+      }
+
+      .is-active {
+        background-color: #cfcfcf;
+      }
+
+      .user-chat {
+        cursor: pointer;
+        display: grid;
+        grid-template-columns: 1fr 6fr 3fr;
+        padding: 1rem 0.5rem;
+        border-bottom: 1px solid #ccc;
+
+        .avatar {
+          margin: 0 1rem;
+
+          img {
+            width: 50px;
+            border-radius: 50%;
+          }
+        }
+
+        .name {
+          font-weight: 800;
+        }
+
+        .date {
+          font-size: 12px;
+          text-align: end;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+<div class="container-chat">
+  <div class="user">
+    <div class="avatar">
+      <img src="{{ chat.user.avatarUrl }}" alt="avatar">
+    </div>
+    <div class="nickname">{{ chat.user.username }}</div>
+  </div>
+  <div class="chat">
+    <ng-container *ngFor="let message of chat.messages">
+      <div class="message" [ngClass]="{'my': message.my == true}">
+        <div class="content">
+          {{ message.value }}
+        </div>
+        <div class="time">
+          {{ message.timestamp | date:'short' }}
+        </div>
+      </div>
+
+    </ng-container>
+  </div>
+  <div class="send">
+    <form [formGroup]='form' (ngSubmit)="sendMessage()">
+      <input type="text" formControlName="message" placeholder="Type your message">
+      <button type="submit"><img src="../../../assets/send.png"></button>
+    </form>
+  </div>
+</div>
